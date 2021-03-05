@@ -11,6 +11,7 @@ inference_all_datasets : effectue une inférence sur l'ensemble de données selo
 Veuillez trouver des exemple d'excution dans le fichier projet_prat.ipynb
 
 Nous fournissons egalement l'implémentation d'opencv et flownet2.
-
+OPENCV_flow.ipynb
+flownet2.ipynb
 
 
