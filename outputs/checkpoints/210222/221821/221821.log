@@ -1,0 +1,89 @@
+02-22 22:18:21  INFO - main_logger [logger.py line 26] - Start training
+02-22 22:18:21  INFO - main_logger [train.py line 43] - => will save everything to ./outputs/checkpoints/210222/221821
+02-22 22:18:21  INFO - main_logger [train.py line 47] - => configurations 
+ {'data': {'root_sintel': '/content/drive/MyDrive/data1/',
+          'root_sintel_raw': '/content/drive/MyDrive/data1/',
+          'run_at': False,
+          'test_shape': [448, 1024],
+          'train_n_frames': 2,
+          'type': 'OCEANO',
+          'val_n_frames': 2,
+          'val_subsplit': 'val'},
+ 'data_aug': {'crop': True,
+              'hflip': False,
+              'para_crop': [384, 640],
+              'swap': False},
+ 'loss': {'alpha': 10,
+          'occ_from_back': True,
+          'type': 'unflow',
+          'w_l1': 0.15,
+          'w_scales': [1.0, 1.0, 1.0, 1.0, 0.0],
+          'w_sm_scales': [1.0, 0.0, 0.0, 0.0, 0.0],
+          'w_smooth': 50.0,
+          'w_ssim': 0.85,
+          'w_ternary': 0.0,
+          'warp_pad': 'border',
+          'with_bk': True},
+ 'model': {'n_frames': 2,
+           'reduce_dense': True,
+           'type': 'pwclite',
+           'upsample': True},
+ 'save_root': Path('./outputs/checkpoints/210222/221821'),
+ 'seed': 0,
+ 'train': {'batch_size': 4,
+           'beta': 0.999,
+           'bias_decay': 0,
+           'epoch_num': 10,
+           'epoch_size': 1000,
+           'lr': 0.0001,
+           'momentum': 0.9,
+           'n_gpu': 1,
+           'optim': 'adam',
+           'pretrained_model': 'checkpoints/Sintel/pwclite_ar.tar',
+           'print_freq': 10,
+           'record_freq': 50,
+           'save_iter': 10000,
+           'stage1': {'epoch': 50,
+                      'loss': {'occ_from_back': False,
+                               'w_l1': 0.0,
+                               'w_ssim': 0.0,
+                               'w_ternary': 1.0}},
+           'val_epoch_size': 1,
+           'valid_size': 0,
+           'weight_decay': 1e-06,
+           'workers': 4},
+ 'trainer': 'OCEANO_Trainer'}
+02-22 22:18:21  INFO - main_logger [basic_train.py line 14] - => fetching img pairs.
+02-22 22:18:49  INFO - main_logger [basic_train.py line 20] - 3564 samples found, 1188 train samples and 2376 test samples 
+02-22 22:18:53  INFO - main_logger [base_trainer.py line 59] - => using pre-trained weights checkpoints/Sintel/pwclite_ar.tar.
+02-22 22:18:53  INFO - main_logger [base_trainer.py line 76] - => setting Adam solver
+02-22 22:18:57  INFO - main_logger [oceano_trainer.py line 74] - 0:0000/0297 Time  3.680 ( 3.680) Data  2.801 ( 2.801) Info  0.0167  0.0162  0.0005  0.1259 ( 0.0167  0.0162  0.0005  0.1259)
+02-22 22:19:02  INFO - main_logger [oceano_trainer.py line 74] - 0:0010/0297 Time  0.509 ( 0.795) Data  0.148 ( 0.387) Info  0.0162  0.0154  0.0008  0.1390 ( 0.0164  0.0157  0.0007  0.1273)
+02-22 22:19:07  INFO - main_logger [oceano_trainer.py line 74] - 0:0020/0297 Time  0.513 ( 0.660) Data  0.144 ( 0.273) Info  0.0152  0.0146  0.0006  0.1291 ( 0.0163  0.0157  0.0007  0.1314)
+02-22 22:19:13  INFO - main_logger [oceano_trainer.py line 74] - 0:0030/0297 Time  0.520 ( 0.615) Data  0.148 ( 0.234) Info  0.0158  0.0152  0.0006  0.1421 ( 0.0163  0.0156  0.0007  0.1334)
+02-22 22:19:18  INFO - main_logger [oceano_trainer.py line 74] - 0:0040/0297 Time  0.503 ( 0.590) Data  0.149 ( 0.213) Info  0.0158  0.0152  0.0006  0.1533 ( 0.0162  0.0156  0.0007  0.1369)
+02-22 22:19:23  INFO - main_logger [oceano_trainer.py line 74] - 0:0050/0297 Time  0.509 ( 0.577) Data  0.143 ( 0.200) Info  0.0152  0.0146  0.0006  0.1498 ( 0.0163  0.0156  0.0007  0.1388)
+02-22 22:19:28  INFO - main_logger [oceano_trainer.py line 74] - 0:0060/0297 Time  0.521 ( 0.568) Data  0.151 ( 0.192) Info  0.0162  0.0156  0.0006  0.1298 ( 0.0163  0.0157  0.0006  0.1390)
+02-22 22:19:33  INFO - main_logger [oceano_trainer.py line 74] - 0:0070/0297 Time  0.525 ( 0.562) Data  0.152 ( 0.186) Info  0.0124  0.0118  0.0006  0.1346 ( 0.0164  0.0158  0.0006  0.1397)
+02-22 22:19:39  INFO - main_logger [oceano_trainer.py line 74] - 0:0080/0297 Time  0.518 ( 0.557) Data  0.152 ( 0.182) Info  0.0160  0.0154  0.0006  0.1397 ( 0.0164  0.0158  0.0006  0.1405)
+02-22 22:19:44  INFO - main_logger [oceano_trainer.py line 74] - 0:0090/0297 Time  0.529 ( 0.553) Data  0.154 ( 0.179) Info  0.0195  0.0188  0.0006  0.1593 ( 0.0165  0.0158  0.0006  0.1412)
+02-22 22:19:49  INFO - main_logger [oceano_trainer.py line 74] - 0:0100/0297 Time  0.525 ( 0.551) Data  0.155 ( 0.176) Info  0.0160  0.0153  0.0007  0.1459 ( 0.0164  0.0158  0.0006  0.1419)
+02-22 22:19:54  INFO - main_logger [oceano_trainer.py line 74] - 0:0110/0297 Time  0.520 ( 0.549) Data  0.151 ( 0.175) Info  0.0154  0.0148  0.0006  0.1337 ( 0.0163  0.0157  0.0006  0.1418)
+02-22 22:20:00  INFO - main_logger [oceano_trainer.py line 74] - 0:0120/0297 Time  0.531 ( 0.547) Data  0.157 ( 0.173) Info  0.0143  0.0137  0.0007  0.1408 ( 0.0163  0.0157  0.0006  0.1419)
+02-22 22:20:05  INFO - main_logger [oceano_trainer.py line 74] - 0:0130/0297 Time  0.536 ( 0.547) Data  0.158 ( 0.172) Info  0.0170  0.0164  0.0006  0.1554 ( 0.0162  0.0156  0.0006  0.1424)
+02-22 22:20:11  INFO - main_logger [oceano_trainer.py line 74] - 0:0140/0297 Time  0.545 ( 0.546) Data  0.158 ( 0.171) Info  0.0156  0.0150  0.0006  0.1425 ( 0.0162  0.0155  0.0006  0.1427)
+02-22 22:20:16  INFO - main_logger [oceano_trainer.py line 74] - 0:0150/0297 Time  0.530 ( 0.546) Data  0.159 ( 0.171) Info  0.0158  0.0151  0.0007  0.1453 ( 0.0162  0.0155  0.0006  0.1429)
+02-22 22:20:21  INFO - main_logger [oceano_trainer.py line 74] - 0:0160/0297 Time  0.535 ( 0.546) Data  0.161 ( 0.170) Info  0.0179  0.0172  0.0006  0.1468 ( 0.0162  0.0155  0.0006  0.1435)
+02-22 22:20:27  INFO - main_logger [oceano_trainer.py line 74] - 0:0170/0297 Time  0.549 ( 0.546) Data  0.163 ( 0.169) Info  0.0164  0.0157  0.0007  0.1494 ( 0.0161  0.0155  0.0006  0.1436)
+02-22 22:20:32  INFO - main_logger [oceano_trainer.py line 74] - 0:0180/0297 Time  0.545 ( 0.546) Data  0.163 ( 0.169) Info  0.0156  0.0150  0.0006  0.1576 ( 0.0161  0.0155  0.0006  0.1438)
+02-22 22:20:38  INFO - main_logger [oceano_trainer.py line 74] - 0:0190/0297 Time  0.552 ( 0.547) Data  0.164 ( 0.169) Info  0.0141  0.0135  0.0006  0.1489 ( 0.0160  0.0154  0.0006  0.1438)
+02-22 22:20:43  INFO - main_logger [oceano_trainer.py line 74] - 0:0200/0297 Time  0.543 ( 0.547) Data  0.164 ( 0.169) Info  0.0156  0.0149  0.0006  0.1427 ( 0.0160  0.0154  0.0006  0.1439)
+02-22 22:20:49  INFO - main_logger [oceano_trainer.py line 74] - 0:0210/0297 Time  0.555 ( 0.547) Data  0.162 ( 0.169) Info  0.0145  0.0138  0.0006  0.1511 ( 0.0160  0.0153  0.0006  0.1442)
+02-22 22:20:54  INFO - main_logger [oceano_trainer.py line 74] - 0:0220/0297 Time  0.564 ( 0.547) Data  0.161 ( 0.168) Info  0.0146  0.0139  0.0007  0.1615 ( 0.0160  0.0153  0.0006  0.1446)
+02-22 22:21:00  INFO - main_logger [oceano_trainer.py line 74] - 0:0230/0297 Time  0.547 ( 0.547) Data  0.162 ( 0.168) Info  0.0162  0.0155  0.0007  0.1473 ( 0.0160  0.0153  0.0006  0.1450)
+02-22 22:21:05  INFO - main_logger [oceano_trainer.py line 74] - 0:0240/0297 Time  0.546 ( 0.547) Data  0.162 ( 0.168) Info  0.0165  0.0159  0.0006  0.1421 ( 0.0160  0.0154  0.0006  0.1454)
+02-22 22:21:11  INFO - main_logger [oceano_trainer.py line 74] - 0:0250/0297 Time  0.545 ( 0.546) Data  0.159 ( 0.167) Info  0.0135  0.0129  0.0006  0.1592 ( 0.0160  0.0154  0.0006  0.1457)
+02-22 22:21:16  INFO - main_logger [oceano_trainer.py line 74] - 0:0260/0297 Time  0.529 ( 0.546) Data  0.160 ( 0.167) Info  0.0155  0.0148  0.0006  0.1348 ( 0.0160  0.0153  0.0006  0.1459)
+02-22 22:21:21  INFO - main_logger [oceano_trainer.py line 74] - 0:0270/0297 Time  0.546 ( 0.546) Data  0.158 ( 0.167) Info  0.0148  0.0142  0.0006  0.1607 ( 0.0160  0.0153  0.0006  0.1462)
+02-22 22:21:27  INFO - main_logger [oceano_trainer.py line 74] - 0:0280/0297 Time  0.569 ( 0.546) Data  0.160 ( 0.166) Info  0.0150  0.0143  0.0007  0.1512 ( 0.0160  0.0153  0.0006  0.1465)
+02-22 22:21:32  INFO - main_logger [oceano_trainer.py line 74] - 0:0290/0297 Time  0.525 ( 0.545) Data  0.158 ( 0.166) Info  0.0154  0.0147  0.0006  0.1512 ( 0.0160  0.0153  0.0006  0.1466)
